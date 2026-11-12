@@ -534,7 +534,7 @@ var g=document.getElementById('glg'),sec=document.getElementById('gallery'),lb=d
 if(!g||!lb||!sec)return;
 var items=[],btns=[],idx=0,last=null,io=null;
 if('IntersectionObserver' in window){g.classList.add('gl-js');io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12})}
-document.querySelectorAll('#services .card:not(.pkg) .im img').forEach(function(im){if(im.getAttribute('src'))items.push({src:im.getAttribute('src'),alt:im.getAttribute('alt')||'VIP Band Event photo'})});
+document.querySelectorAll('#services .card:not(.pkg):not([data-id="umbrella"]) .im img').forEach(function(im){if(im.getAttribute('src'))items.push({src:im.getAttribute('src'),alt:im.getAttribute('alt')||'VIP Band Event photo'})});
 var PAT=[1,2,3,2],cl=null,col=null,ci=-1,cn=0;
 items.forEach(function(it,i){
  if(!col||cn>=PAT[ci]){ci++;if(!cl||ci>=PAT.length){cl=document.createElement('div');cl.className='gl-cl';g.appendChild(cl);ci=0}col=document.createElement('div');col.className='gl-col';cl.appendChild(col);cn=0}
